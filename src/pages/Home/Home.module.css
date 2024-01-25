@@ -5,14 +5,17 @@
     height: auto;
     display: flex;
     flex-direction: column;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.text {
     font-family: 'Inter', sans-serif;
     color: #fff;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: normal; 
-    padding-left: 10%;
-    padding-right: 10%;
 }
 
 span {
@@ -21,8 +24,22 @@ span {
 }
 
 .search_area{
-    width: 735px;
-    height: 65px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+input {
+    width: 600px;
+    border-radius: 4px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(76, 16, 85, 0.33);
+    font-size: 14px;
+    color: #fff;
+    padding: 10px 20px;
+    font-family: 'Inter', sans-serif;
+
 }
 
 
