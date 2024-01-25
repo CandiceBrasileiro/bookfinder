@@ -6,10 +6,12 @@
     display: flex;
     flex-direction: column;
     background: linear-gradient(180deg, #0F985F 0%, #1E1E1E 100%);
+    background-attachment:fixed;
     
 }
 
 html, body {
     margin: 0;
+    padding: 0;
     height: 100%;
   }

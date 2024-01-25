@@ -6,7 +6,6 @@ const Header = () => {
     <div className={styles.container}>
         <img src={Logo} />
         <hr />
-
     </div>
   )
 }

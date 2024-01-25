@@ -1,8 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Spectral:wght@700&display=swap');
 
 .container {
+    width: 80%;
     height: auto;
     display: flex;
     flex-direction: column;
-
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal; 
+    padding-left: 10%;
+    padding-right: 10%;
 }
+
+span {
+    color: #522759;
+    font-weight: 600;
+}
+
+.search_area{
+    width: 735px;
+    height: 65px;
+}
+
+
+

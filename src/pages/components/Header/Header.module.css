@@ -1,9 +1,11 @@
 .container {
-    width: 1000px;
+    width: 80%;
     display: inline-block;
-    align-self: center;
     padding-top: 10px;
+    padding-left: 10%;
+    padding-right: 10%;
 }
+
 
 hr {
     color: #fff;
