@@ -1,10 +1,13 @@
 import ButtonMore from "../components/Button/Button"
-import Header from "../components/Header/Header";
+
+import styles from './Home.module.css';
+
 
 const Home = () => {
   return (
-    <div>
-        <Header />
+    <div className={styles.container}>
+
+        <p>Find your favorite books</p>
         <ButtonMore />
     </div>
   )

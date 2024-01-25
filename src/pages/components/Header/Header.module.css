@@ -1,0 +1,11 @@
+.container {
+    width: 1000px;
+    display: inline-block;
+    align-self: center;
+    padding-top: 10px;
+}
+
+hr {
+    color: #fff;
+    height: 1px solid;
+}

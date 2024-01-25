@@ -1,4 +1,5 @@
-import Home from "./pages/Home/Home"
+import Header from "./pages/components/Header/Header";
+import Home from "./pages/Home/Home";
 
 function App() {
 
@@ -6,7 +7,8 @@ function App() {
   return (
     <>
       <div>
-        <Home />
+      <Header />
+      <Home />
        
       </div>
       
