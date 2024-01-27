@@ -1,5 +1,5 @@
 import styles from './Home.module.css';
-
+import { FaSearch } from "react-icons/fa";
 
 const Home = () => {
   return (
@@ -10,6 +10,12 @@ const Home = () => {
     </div>
     <div className={styles.search_area}>
       <input type="text" placeholder='Type author, title...' />
+     <i>
+      <FaSearch />
+     </i>
+    </div>
+    <div>
+      
     </div>
     </div>
 
