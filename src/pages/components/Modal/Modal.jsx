@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Modal.module.css';
 import { FaRegWindowClose } from "react-icons/fa";
+import { FaGooglePlay } from "react-icons/fa";
 
 export const Modal = ({setOpenModal, book}) => {
     return(
@@ -17,20 +18,24 @@ export const Modal = ({setOpenModal, book}) => {
                   </button>
               </div>
               <div className={styles.book_cover}>
-                <div>
-                  <div>
+                <div className={styles.grid_container}>
+                  <div className={styles.img}>
                     <img src={book.thumbnail} alt='' />
                   </div>
-                  <div>
-                    <h2>{book.title}</h2>                  
-                  </div>
-                  <div>
-                    <span></span>
-                  </div>
+                  <div className={styles.title}>
+                    <h2>{book.title}</h2>   
+                    <div className={styles.infos}>   
+                      <p><span>Author: </span>{book.author}</p>        
+                      <p><span>Publisher: </span>{book.publisher}</p>    
+                      <p><span>Published date: </span>{book.publishedDate}</p>
+                      <p><span>Pages: </span>{book.pageCount}</p>
+                    </div>
+                  </div>             
                 </div>
               </div>
               <div className={styles.body}>
-                <p>Book description</p>
+                <p><span>Book description</span></p>
+                <p>{book.description}</p>
               </div>
               <div className={styles.footer}>
                 <button
@@ -39,9 +44,9 @@ export const Modal = ({setOpenModal, book}) => {
                   }}
                   id="cancelBtn"
                 >
-                  Cancel
+                  Close
                 </button>
-                <button>Continue</button>
+                <button>Google Play  <FaGooglePlay /></button>
               </div>
             </div>
           </div>
