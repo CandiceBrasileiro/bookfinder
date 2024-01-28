@@ -2,7 +2,7 @@ import { useState} from 'react';
 import styles from './Home.module.css';
 import { FaSearch } from "react-icons/fa";
 import Card from '../components/Card/Card';
-import axios from 'axios';
+import {getBooks} from '../../api';
 
 const Home = () => {
 
@@ -12,17 +12,7 @@ const Home = () => {
     const heandleSearchBook = (e) => {
         e.preventDefault();
 
-        axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyCCAAqjtJh-HCUDD0KFpSrtUm5k2_EIos0' + '&maxResults=40')
-        .then((response) => {
-
-            if(response){
-                console.log('resp', response)
-                setBookData(response.data.items);
-            }
-        })
-        .catch(error => {
-            return error;
-        })
+        const books = getBooks(search);
     }
 
     return (

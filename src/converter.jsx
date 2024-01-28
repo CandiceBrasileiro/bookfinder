@@ -1,5 +1,5 @@
 export const booksConverter = (books) => {
-    const mappedBooks = books?.map((book) => {
+    const mappedBooks = books.items?.map((book) => {
         return bookConverter(book);
     })
     return mappedBooks;
@@ -7,10 +7,10 @@ export const booksConverter = (books) => {
 
 export const bookConverter = (book) => {
     return {
-        thumbnail: item.volumeInfo.imagesLinks && item.volumeInfo.imagesLinks.smallThumbnail,
+        thumbnail: book.volumeInfo.imagesLinks && book.volumeInfo.imagesLinks.smallThumbnail,
         title: book.volumeInfo.title,
-        author: item.volumeInfo.authors[0],
-        publisher: item.volumeInfo.publisher,
-        publishedDate: item.volumeInfo.publishedDate
+        author: book.volumeInfo.authors[0],
+        publisher: book.volumeInfo.publisher,
+        publishedDate: book.volumeInfo.publishedDate
     }
 };
