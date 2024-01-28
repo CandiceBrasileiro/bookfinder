@@ -15,7 +15,10 @@ export const bookConverter = (book) => {
         title: book.volumeInfo?.title || ' - ',
         author: authors,
         publisher: published || ' - ',
-        publishedDate: book.volumeInfo.publishedDate || ' - '
+        publishedDate: book.volumeInfo.publishedDate || ' - ',
+        description: book.volumeInfo?.description || ' - ',
+        pageCount: book.volumeInfo?.pageCount || ' - ',
+        webReaderLink: book.acessInfo?.webReaderLink || ' - '
     }
 };
 

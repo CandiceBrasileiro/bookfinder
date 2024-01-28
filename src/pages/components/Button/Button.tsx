@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Button.module.css';
+import { IoIosArrowForward } from "react-icons/io";
 
 type ButtonProps = {
     children?: React.ReactNode;
@@ -10,7 +11,7 @@ type ButtonProps = {
 const ButtonMore = (props: ButtonProps) => {
     return (
         <button className={styles.container} onClick={props.onClick}>
-            More
+            More <IoIosArrowForward className={styles.icon} />
         </button>
     )
 }

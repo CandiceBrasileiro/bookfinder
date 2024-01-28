@@ -9,6 +9,7 @@ const Home = () => {
     const [search, setSearch] = useState("");
     const [bookData, setBookData] = useState([]);
 
+
     const heandleSearchBook = (e) => {
         e.preventDefault();
 
@@ -34,18 +35,21 @@ const Home = () => {
                     value={search} 
                     onChange={e=>setSearch(e.target.value)} 
                     />
-                    <button type='submit'>
+                    <button type='submit' className={styles.btn}>
                         <FaSearch />
                     </button>
                 </form>
             </div>
-            <div>       
+            <div className={styles.card}>       
                 { 
                     bookData.map((books) => {
+                        console.log('books', books)
                         return <Card book={books} />
                     })
                 }           
             </div>
+
+            
         </div>
     )
 }
