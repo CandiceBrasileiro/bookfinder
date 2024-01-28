@@ -1,36 +1,21 @@
 import React from 'react';
+import ButtonMore from '../Button/Button';
 
 const Card = ({book}) => {
-    const map = new Map();
-
-  return (
-    <>
-        {
-            book.map((item) => {
-
-                const bookId = item.id;
-                const bookThunbnail = item.volumeInfo.imagesLinks && item.volumeInfo.imagesLinks.smallThumbnail;
-                const bookTitle = item.volumeInfo.title;
-                const bookAuthor = item.volumeInfo.authors;
-
-                if(bookThunbnail != undefined) {
-                return (
-                    <div className='card'>
-                        <img src={bookThunbnail} alt={bookTitle} />
-                        <div className='bottom'>
-                            <h3 className='title'>Title</h3>
-                            <p className='amount'>Amount</p>
-                        </div>
-                    </div>
-                    )
-                }
-            })
-        }
-                
-            
-        
-    </>
-  )
+    return(
+        <div className='card'>
+            {/* <img src={book.volumeInfo.imagesLinks && book.volumeInfo.imagesLinks.smallThumbnail} alt={book.volumeInfo.title} />
+            <div className='bottom'>
+                <ol>
+                <li className='title'>{book.volumeInfo.title}</li>
+                <li className='author'>{item.volumeInfo.authors[0]}</li>
+                <li className='publisher'>{publisher}</li>
+                <li className='publishedDate'>{publishedDate}</li>
+                </ol>
+            </div>
+            <ButtonMore /> */}
+        </div>
+    )
 }
 
 export default Card;

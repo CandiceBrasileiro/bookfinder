@@ -12,9 +12,11 @@ const Home = () => {
     const heandleSearchBook = (e) => {
         e.preventDefault();
 
-        const getBooks = axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyCCAAqjtJh-HCUDD0KFpSrtUm5k2_EIos0' + '&maxResults=40')
+        axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyCCAAqjtJh-HCUDD0KFpSrtUm5k2_EIos0' + '&maxResults=40')
         .then((response) => {
+
             if(response){
+                console.log('resp', response)
                 setBookData(response.data.items);
             }
         })
@@ -31,15 +33,20 @@ const Home = () => {
             </div>
             <div className={styles.search_area}>
                 <form onSubmit={heandleSearchBook}>
-                    <input type="text" placeholder='Type author, title...' />
-                    <button>
+                    <input 
+                    type="text" 
+                    placeholder='Type author, title...'
+                    value={search} 
+                    onChange={e=>setSearch(e.target.value)} 
+                    />
+                    <button type='submit'>
                         <FaSearch />
                     </button>
                 </form>
             </div>
-            <div>      {     
-                <Card book={bookData} /> 
-            }
+            <div>          
+            <Card book={bookData} /> 
+        
             </div>
         </div>
     )
