@@ -7,14 +7,15 @@ export const booksConverter = (books) => {
 
 export const bookConverter = (book) => {
 
-    const authors = book.volumeInfo?.authors && book.volumeInfo.authors[0];
+    const authors = book.volumeInfo?.authors && book.volumeInfo.authors[0] || ' - ';
+    const published = book.volumeInfo.publisher;
 
     return {
-        thumbnail: book.volumeInfo?.imagesLinks && book.volumeInfo.imagesLinks.smallThumbnail,
-        title: book.volumeInfo?.title || '',
+        thumbnail: book.volumeInfo?.imageLinks && book.volumeInfo.imageLinks.smallThumbnail,
+        title: book.volumeInfo?.title || ' - ',
         author: authors,
-        publisher: book.volumeInfo.publisher || '',
-        publishedDate: book.volumeInfo.publishedDate || ''
+        publisher: published || ' - ',
+        publishedDate: book.volumeInfo.publishedDate || ' - '
     }
 };
 
