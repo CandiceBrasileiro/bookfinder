@@ -11,6 +11,7 @@ export const bookConverter = (book) => {
     const published = book.volumeInfo.publisher;
 
     return {
+        id:book.id,
         thumbnail: book.volumeInfo?.imageLinks && book.volumeInfo.imageLinks.smallThumbnail,
         title: book.volumeInfo?.title || ' - ',
         author: authors,
