@@ -6,11 +6,15 @@ export const booksConverter = (books) => {
 };
 
 export const bookConverter = (book) => {
+
+    const authors = book.volumeInfo?.authors && book.volumeInfo.authors[0];
+
     return {
-        thumbnail: book.volumeInfo.imagesLinks && book.volumeInfo.imagesLinks.smallThumbnail,
-        title: book.volumeInfo.title,
-        author: book.volumeInfo.authors[0],
-        publisher: book.volumeInfo.publisher,
-        publishedDate: book.volumeInfo.publishedDate
+        thumbnail: book.volumeInfo?.imagesLinks && book.volumeInfo.imagesLinks.smallThumbnail,
+        title: book.volumeInfo?.title || '',
+        author: authors,
+        publisher: book.volumeInfo.publisher || '',
+        publishedDate: book.volumeInfo.publishedDate || ''
     }
 };
+

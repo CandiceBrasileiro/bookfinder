@@ -12,7 +12,12 @@ const Home = () => {
     const heandleSearchBook = (e) => {
         e.preventDefault();
 
-        const books = getBooks(search);
+        getBooks(search).then((books) => {
+            console.log('books', books)
+            if (books) {
+                setBookData(books);
+            }
+        })
     }
 
     return (
@@ -36,6 +41,7 @@ const Home = () => {
             </div>
             <div>          
             <Card book={bookData} /> 
+            {/* item do map */}
         
             </div>
         </div>
