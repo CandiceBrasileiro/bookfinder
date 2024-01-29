@@ -1,6 +1,6 @@
+import {ItemBook} from './interfaces';
 
-
-export const bookConverter = (book) => {
+export const bookConverter = (book:ItemBook) => {
 
     const authors:string = book.volumeInfo?.authors && book.volumeInfo.authors[0] || ' - ';
     const published: string = book.volumeInfo.publisher;

@@ -40,7 +40,9 @@ const Home = () => {
             </form>
         </div>
         <div className={styles.card}>       
-                  
+            {
+                
+            }
         </div>
     </div>
 </>
