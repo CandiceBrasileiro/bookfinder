@@ -2,7 +2,7 @@ import { useState} from 'react';
 import styles from './Home.module.css';
 import { FaSearch } from "react-icons/fa";
 import Card from '../components/Card/Card';
-import {getBooks} from '../../api';
+import {getBooks} from '../../Api';
 
 const Home = () => {
 

@@ -1,15 +1,22 @@
 import { useState} from 'react';
 import styles from './Home.module.css';
 import { FaSearch } from "react-icons/fa";
+import { Book } from '../../interfaces';
+import { getBooks } from '../../Api';
 
 const Home = () => {
 
     const [search, setSearch] = useState("");
+    const [bookData, setBookData] = useState<Book>({} as Book);
 
-    const handleSearch: React.ChangeEventHandler = (e) => {
+    const handleSearch: React.ChangeEventHandler<HTMLFormElement> = (e) => {
         e.preventDefault();
 
-        
+        const books:Book[] = getBooks(search).then((book:Book) => {
+            if (book) {
+                setBookData(book);
+            }
+        });
     }
 
   return (
@@ -20,7 +27,7 @@ const Home = () => {
             <hr />
         </div>
         <div className={styles.search_area}>
-            <form >
+            <form onSubmit ={handleSearch}>
                 <input 
                 type="text" 
                 placeholder='Type author, title...'
