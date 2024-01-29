@@ -5,7 +5,7 @@ export interface Book {
     published: string;
     publishedDate: string;
     description: string;
-    pageCount: string;
+    pageCount:number;
     webReaderLink: string;
 }
 

@@ -1,4 +1,12 @@
-import {ItemBook} from './interfaces';
+import {ItemBook, BookApi} from './interfaces';
+import { Book } from "./interfaces";
+
+export const booksConverter = (books: BookApi) => {
+    const mappedBooks: Book[] = books.items?.map((book:ItemBook) => {
+        return bookConverter(book);
+    })
+    return mappedBooks;
+}
 
 export const bookConverter = (book:ItemBook) => {
 
@@ -9,11 +17,11 @@ export const bookConverter = (book:ItemBook) => {
         id: book.id,
         thumbnail: book.volumeInfo?.imageLinks && book.volumeInfo.imageLinks.smallThumbnail,
         title: book.volumeInfo?.title || ' - ',
-        author: authors,
-        publisher: published || ' - ',
+        authors: authors,
+        published: published || ' - ',
         publishedDate: book.volumeInfo.publishedDate || ' - ',
         description: book.volumeInfo?.description || ' - ',
-        pageCount: book.volumeInfo?.pageCount || ' - ',
+        pageCount: book.volumeInfo?.pageCount || 0,
         webReaderLink: book.acessInfo?.webReaderLink || ' - '
     }
 }

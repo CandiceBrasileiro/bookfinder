@@ -8,15 +8,14 @@ const Home = () => {
 
     const [search, setSearch] = useState("");
     const [bookData, setBookData] = useState<Book>({} as Book);
+    const [booksData, setBooksData] = useState<Book[]>([]);
 
-    const handleSearch: React.ChangeEventHandler<HTMLFormElement> = (e) => {
+
+    const handlerSearch:React.FormEventHandler<HTMLFormElement> = (e) =>{
         e.preventDefault();
-
-        const books:Book[] = getBooks(search).then((book:Book) => {
-            if (book) {
-                setBookData(book);
-            }
-        });
+        getBooks(search).then((items)=>{
+            setBooksData(items)
+        })
     }
 
   return (
@@ -27,7 +26,7 @@ const Home = () => {
             <hr />
         </div>
         <div className={styles.search_area}>
-            <form onSubmit ={handleSearch}>
+            <form onSubmit ={handlerSearch}>
                 <input 
                 type="text" 
                 placeholder='Type author, title...'
