@@ -105,4 +105,45 @@
   .modalContainer .footer button:hover {
     background-color: #43174b;
   }
+
+  @media only screen and (max-width: 800px) {
+    .modalBackground {
+        max-width: 800px;
+        height: 100%;
+        top: 0%;
+    }
+
+    .modalContainer {
+        width: 600px;
+        height: 500px;
+    }
+
+  }
+
+  @media only screen and (max-width: 450px) {
+    .modalBackground {
+        max-width: 800px;
+        height: 100%;
+        top: 0%;
+    }
+
+    .modalContainer {
+        width: 600px;
+        height: 500px;
+    }
+
+    .img {
+        margin-right: 20px;
+    }
+
+    .title {
+        h2 {
+            font-size: medium;
+        }
+    }
+
+    .infos {
+        font-size: small;
+    }
+  }
   
