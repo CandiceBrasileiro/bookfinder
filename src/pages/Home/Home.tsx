@@ -3,6 +3,7 @@ import styles from './Home.module.css';
 import { FaSearch } from "react-icons/fa";
 import { Book } from '../../interfaces';
 import { getBooks } from '../../Api';
+import { Card } from '../components/Card';
 
 const Home = () => {
 
@@ -33,15 +34,15 @@ const Home = () => {
                 value={search} 
                 onChange={e=>setSearch(e.target.value)} 
                 />
-                <button type='submit' >
+                <button type='submit' className={styles.btn} >
                     <FaSearch />
                 </button>
             </form>
         </div>
         <div className={styles.card}>       
-            {
-                
-            }
+            {booksData && booksData.map((item))=>{(
+                <Card book={item} />
+            )}}
         </div>
     </div>
 </>
